@@ -7,9 +7,9 @@ import Table from './components/Table/Table.jsx'
 import Form from './components/Form/Form.jsx'
 import Paragraph from './components/Paragraph/Paragraph.jsx'
 
-
 function App() {
   const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}  
+          count is {count}
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
