@@ -17,7 +17,8 @@ import Pokemon from './useEffect/components/Pokemon/Pokemon.jsx'
 import { Video, GuessNumber, RefForm } from './useRef/index.js'
 import UseRefInput from './useRef/components/Input/UseRefInput.jsx'
 import { ReducerCounter, ReducerCounter2, ReducerForm } from "./useReducer/index.js"
-import { Level3 } from "./useContext/index.js"
+// import { Parent } from "./useContext/index.js"
+import Parent from './useContext/exercise/3/Parent.jsx'
 
 
 function clickHandler() {
@@ -30,8 +31,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     {/* useContext */}
+    {/* <Parent /> */}
 
-    <Level3 />
+    <Parent />
+    {/* <Child /> */}
 
     {/* useReducer */}
     {/* <ReducerForm /> */}

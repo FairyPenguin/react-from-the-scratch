@@ -5,10 +5,12 @@ import Level1 from "./Level1"
 
 function Level2() {
 
+    const ctx = useContext(AuthContext)
+    console.log(ctx)
 
     return (
         <>
-            {/* <h1>Level2</h1> */}
+            <h1>{ctx}</h1>
 
             <Level1 />
         </>

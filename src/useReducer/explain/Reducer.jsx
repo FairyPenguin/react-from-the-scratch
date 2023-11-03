@@ -7,9 +7,10 @@ import { useReducer } from 'react'
 function reducerFunc(prevState, action) {
 
     // wrapping the prevState and action like Objects 
-    // will return then in a {Key: Value } style
+    // will return them in a {Key: Value } style
     console.log({ prevState }, { action })
 
+    
     if (action.type === "add") {
         return action.value + prevState
     } else {
