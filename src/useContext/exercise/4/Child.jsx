@@ -5,13 +5,23 @@ import { ParentContext } from "./Parent"
 
 
 function Child() {
-    const [state, UP] = useContext(ParentContext)
+    
+    const Dispatch = useContext(ParentContext)
+
+
+    function UP() {
+
+        Dispatch({
+            type: "Add",
+            value: 1
+        })
+
+    }
 
     return (
         <div>
             <h1>Child</h1>
-            <h2>Counter: {state}</h2>
-            <button
+            <button style={{ color: "wheat" }}
                 onClick={UP}
             >Click or it will Stick</button>
         </div>

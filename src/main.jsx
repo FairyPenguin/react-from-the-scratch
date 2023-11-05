@@ -18,7 +18,8 @@ import { Video, GuessNumber, RefForm } from './useRef/index.js'
 import UseRefInput from './useRef/components/Input/UseRefInput.jsx'
 import { ReducerCounter, ReducerCounter2, ReducerForm } from "./useReducer/index.js"
 // import { Parent } from "./useContext/index.js"
-import Parent from './useContext/exercise/3/Parent.jsx'
+import Parent from './useContext/exercise/4/Parent.jsx'
+import Conditions from './ConditionalRendering/explain/Conditions.jsx'
 
 
 function clickHandler() {
@@ -30,10 +31,14 @@ function clickHandler() {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
+    {/* Conditional Rendering */}
+
+    <Conditions />
+
     {/* useContext */}
     {/* <Parent /> */}
 
-    <Parent />
+    {/* <Parent /> */}
     {/* <Child /> */}
 
     {/* useReducer */}
