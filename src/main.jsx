@@ -1,27 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import Section from './components/Section/Section.jsx'
-import Profile from "./components/Profile/Profile.jsx"
-import Paragraph from './components/Paragraph/Paragraph.jsx'
-import Counter from './components/Counter/Counter.jsx'
-import TextBox from './components/TextBox/TextBox.jsx'
-import StateForm from './components/StateForm/StateForm.jsx'
 import './index.css'
-import StateProfile from './components/StateProfile/StateProfile.jsx'
-import Counter2 from './components/Counter/Counter2/Counter2.jsx'
-import UseEffectCounter from './useEffect/components/Counter/Counter.jsx'
-import Interval from './useEffect/components/Interval/Interval.jsx'
-import Home from './useEffect/components/Home/Home.jsx'
-import Pokemon from './useEffect/components/Pokemon/Pokemon.jsx'
-import { Video, GuessNumber, RefForm } from './useRef/index.js'
-import UseRefInput from './useRef/components/Input/UseRefInput.jsx'
-import { ReducerCounter, ReducerCounter2, ReducerForm } from "./useReducer/index.js"
-// import { Parent } from "./useContext/index.js"
-import Parent from './useContext/exercise/4/Parent.jsx'
-import Conditions from './ConditionalRendering/explain/Conditions.jsx'
-
-
+import './App.css'
+//Other Imports
+import Button from './ConditionalRendering/excercise/1/Button'
+import ButtonWithState from './ConditionalRendering/excercise/2/ButtonWithState'
+import Auth from './ConditionalRendering/excercise/3/Auth'
+import { PokemonErrorHandle, PokemonCaching } from "./Data Fetching/index"
+// import Names from './ConditionalRendering/excercise/4/Names'
+import Pokemon from "./useEffect/components/Pokemon/Pokemon"
 function clickHandler() {
 
   console.log("It worked!! oh Geeeeez")
@@ -31,9 +18,25 @@ function clickHandler() {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
+    {/* Fetching */}
+
+    <PokemonCaching />
+
+    {/* <PokemonErrorHandle /> */}
+
+    {/* <Pokemon /> */}
+
     {/* Conditional Rendering */}
 
-    <Conditions />
+    {/* <Button loading={true} /> */}
+
+    {/* <Auth /> */}
+
+    {/* <Names /> */}
+
+    {/* <ButtonWithState loading={false} /> */}
+
+    {/* <Conditions /> */}
 
     {/* useContext */}
     {/* <Parent /> */}

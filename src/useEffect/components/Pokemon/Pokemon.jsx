@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 
 function Pokemon() {
 
-    const URL = "https://pokeapi.co/api/v2/pokemon/caterpie"
     const [image, setImage] = useState("")
+
+
+    const URL = "https://pokeapi.co/api/v2/pokemon/caterpie"
 
     useEffect(
         () => {
@@ -14,8 +16,10 @@ function Pokemon() {
                     const response = await fetch(URL)
 
                     const Data = await response.json()
+
                     const imageURL = Data.sprites.other["official-artwork"].front_default
                     setImage(imageURL)
+
                     console.log(Data.sprites.other)
                     if (!response.ok) {
                         console.log("Error")
@@ -25,7 +29,6 @@ function Pokemon() {
 
                     console.log(`${error} "Error...Fetching Failed"`)
                 }
-
             }
 
             fetchHandler()
