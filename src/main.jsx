@@ -6,7 +6,7 @@ import './App.css'
 import Button from './ConditionalRendering/excercise/1/Button'
 import ButtonWithState from './ConditionalRendering/excercise/2/ButtonWithState'
 import Auth from './ConditionalRendering/excercise/3/Auth'
-import { PokemonErrorHandle, PokemonCaching } from "./Data Fetching/index"
+import { PokemonErrorHandle, PokemonCaching, PokemonPagination } from "./Data Fetching/index"
 // import Names from './ConditionalRendering/excercise/4/Names'
 import Pokemon from "./useEffect/components/Pokemon/Pokemon"
 function clickHandler() {
@@ -20,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     {/* Fetching */}
 
-    <PokemonCaching />
+    <PokemonPagination />
+
+    {/* <PokemonCaching /> */}
 
     {/* <PokemonErrorHandle /> */}
 

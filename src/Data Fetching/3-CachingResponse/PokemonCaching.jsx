@@ -12,7 +12,7 @@ function PokemonCaching() {
     })
     const [errorMessage, setErrorMessage] = useState(false)
 
-    //Cache Map
+    //Cache Map using useRef
 
     const PokemonCacheRef = useRef(new Map())
 
@@ -20,6 +20,8 @@ function PokemonCaching() {
     const URL =
 
         `https://pokeapi.co/api/v2/pokemon/${inputPokemon}`
+
+    // Input-Field Handler Function 
 
     function inputHandler(e) {
 
@@ -29,17 +31,15 @@ function PokemonCaching() {
 
     }
 
+    // Submit Button Handler Function 
 
 
     function handelSubmit(e) {
         e.preventDefault()
+
         setInputPokemon(input)
 
-        // if (PokemonCacheRef.current.has(inputPokemon)) {
-        //     console.log("it's Here")
-        //     PokemonCacheRef.current.get(inputPokemon)
-
-        // }
+        // Clear the input field after submitting
         setInput("")
 
     }
@@ -49,44 +49,53 @@ function PokemonCaching() {
         () => {
 
             const fetchHandler = async () => {
+                // try
+
                 try {
+                    //check if the input if empty
 
                     if (inputPokemon === "") {
                         return null
                     }
 
+                    //check if the input is already vailable in the Cache
+
                     if (PokemonCacheRef.current.has(inputPokemon)) {
                         console.log("IT's Here DUDE")
                         setPokemon(PokemonCacheRef.current.get(inputPokemon))
                         console.log(PokemonCacheRef.current.get(inputPokemon))
+
                     } else {
+
+                        // fetch the Pokemnon data 
+
                         const response = await fetch(URL)
                         const Data = await response.json()
+
                         const pokemonName = Data.name
                         const pokemonWeight = Data.weight
                         const pokemonImage = Data.sprites.other["official-artwork"].front_default
-
+                        // Pass pokemon data to the Pokemon State 
                         setPokemon({
                             name: pokemonName,
                             weight: pokemonWeight,
                             image: pokemonImage
                         })
 
-                        PokemonCacheRef.current.set(inputPokemon, {
-                            name: pokemonName,
-                            weight: pokemonWeight,
-                            image: pokemonImage
-                        })
+                        // Pass pokemon data to the Cache (Ref (Map)) 
+
+                        PokemonCacheRef.current.set(inputPokemon,
+                            {
+                                name: pokemonName,
+                                weight: pokemonWeight,
+                                image: pokemonImage
+                            })
                     }
-
-
-
-
-
 
                 }
 
                 catch (error) {
+                    // Error case
                     console.log(error)
                     inputPokemon === "" ? setErrorMessage(false) : ""
                     error ? setErrorMessage(true) : ""
@@ -97,17 +106,6 @@ function PokemonCaching() {
             fetchHandler()
         }, [URL, inputPokemon])
 
-
-
-
-
-
-
-    // function Cache() {
-    //     setCache((prevState) => [...prevState, pokemon])
-
-
-    // }
 
 
 
