@@ -7,7 +7,7 @@ function Home() {
     return (
         <div>
             <h2>Home</h2>
-            <h1>{loggedIn === true ? "LoggedIn" : "LoggedOut"}</h1>
+            <h1>{loggedIn === true ? "Your Profile" : "Not authenticated"}</h1>
         </div>
 
     )

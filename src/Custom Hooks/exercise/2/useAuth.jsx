@@ -7,16 +7,14 @@ function useAuth() {
 
     useEffect(() => {
 
-        const log = setInterval(() => {
+        const log = setTimeout(() => {
 
             setLogged(true)
 
-        }, 1000)
+        }, 3000)
 
-        // return clearInterval(log)
-        // console.log(logged)
 
-    }, [logged])
+    }, [])
 
     return logged
 }
