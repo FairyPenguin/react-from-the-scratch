@@ -9,18 +9,28 @@ import Auth from './ConditionalRendering/excercise/3/Auth'
 import { PokemonErrorHandle, PokemonCaching, PokemonPagination } from "./Data Fetching/index"
 // import Names from './ConditionalRendering/excercise/4/Names'
 import Pokemon from "./useEffect/components/Pokemon/Pokemon"
-function clickHandler() {
 
-  console.log("It worked!! oh Geeeeez")
-}
+import { Home, Home2 } from "./Custom Hooks/index"
+
+
+// function clickHandler() {
+
+//   console.log("It worked!! oh Geeeeez")
+// }
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
+
+    {/* Custom hooks */}
+    {/* <Home /> */}
+
+    <Home2 />
+
     {/* Fetching */}
 
-    <PokemonPagination />
+    {/* <PokemonPagination /> */}
 
     {/* <PokemonCaching /> */}
 
