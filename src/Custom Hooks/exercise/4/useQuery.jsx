@@ -4,6 +4,8 @@ function useQuery(URL) {
 
     const [urlState, setUrlState] = useState("")
 
+    const cache = useRef(new Map())
+
     useEffect(() => {
 
         async function fetchHandler() {
@@ -11,6 +13,9 @@ function useQuery(URL) {
 
                 const response = await fetch(URL)
                 const Data = await response.json()
+
+                cache.current(Data)
+
                 console.log(Data)
 
             } catch (error) {
