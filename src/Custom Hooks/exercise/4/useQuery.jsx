@@ -3,8 +3,10 @@ import { useEffect, useState, useRef } from 'react'
 function useQuery(URL) {
 
     const [urlState, setUrlState] = useState("")
+    const [fetchedData, setFetchedData] = useState("")
 
-    const cache = useRef(new Map())
+
+    // const cache = useRef(new Map())
 
     useEffect(() => {
 
@@ -14,25 +16,27 @@ function useQuery(URL) {
                 const response = await fetch(URL)
                 const Data = await response.json()
 
-                cache.current(Data)
-
+                // cache.current(Data)
                 console.log(Data)
+
+                setFetchedData(Data)
+
 
             } catch (error) {
 
                 console.log(error)
 
             }
+
+
         }
 
         fetchHandler()
 
     }, [URL])
 
+    return fetchedData
 
-    return (
-        <div>useQuery</div>
-    )
 }
 
 export default useQuery
