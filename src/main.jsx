@@ -10,7 +10,7 @@ import { PokemonErrorHandle, PokemonCaching, PokemonPagination } from "./Data Fe
 // import Names from './ConditionalRendering/excercise/4/Names'
 import Pokemon from "./useEffect/components/Pokemon/Pokemon"
 
-import { Home, Home2 } from "./Custom Hooks/index"
+import { Home, Home2, Home3 } from "./Custom Hooks/index"
 
 
 // function clickHandler() {
@@ -25,8 +25,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     {/* Custom hooks */}
     {/* <Home /> */}
-
-    <Home2 />
+    {/* <Home2 /> */}
+    <Home3 />
 
     {/* Fetching */}
 

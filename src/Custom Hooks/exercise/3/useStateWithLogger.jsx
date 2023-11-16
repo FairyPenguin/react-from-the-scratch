@@ -1,9 +1,25 @@
-import { useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
-function useStateWithLogger() {
-    return (
-        <div>useStateWithLogger</div>
-    )
+function useStateWithLogger(initalValue) {
+
+    const [state, setState] = useState(initalValue)
+
+    let prevState = useRef(initalValue)
+
+    useEffect(() => {
+        console.log(`State changed: from ${prevState.current} to: ${state}`)
+        prevState.current = state
+    }
+        , [state])
+
+    function Setter(value) {
+        setState(value)
+
+    }
+
+
+    return [state, setState]
+
 }
 
 export default useStateWithLogger
